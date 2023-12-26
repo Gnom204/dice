@@ -1,16 +1,18 @@
 class Dice {
-  constructor(diceSrc, place, template, button, diceValue) {
+  constructor(diceSrc, place, template, button, diceValue, name) {
     this.template = template;
     this.diceSrc = diceSrc;
     this.diceValue = diceValue;
     this.button = button;
     this.place = place;
+    this.name = name;
 
     // this.objSymbols = objSymbols;
   }
   _createDice() {
     const clone = this.template.content.cloneNode(true);
     const container = clone.querySelector(".dice-container");
+    container.id = this.name;
     const img = clone.querySelector(".dice-img");
     img.src = this.diceSrc;
     img.alt = "Кубик";

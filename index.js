@@ -42,7 +42,7 @@ let diceThirtyArr = [
 ];
 let diceCount = [
   {
-    src: "./source/dice6xblack.png",
+    src: "./source/dice6xBlack.png",
     name: "D6",
   },
   {
@@ -69,9 +69,21 @@ function choiseDice() {
   });
 }
 
+function postDice() {
+  if (!dice) {
+  }
+}
+
 choiseDice();
 
-const diceD6 = new Dice(diceSixUrl, place, template, button, diceSixArr);
-const diceD30 = new Dice(diceThirtyUrl, place, template, button, diceThirtyArr);
+const diceD6 = new Dice(diceSixUrl, place, template, button, diceSixArr, "D6");
+const diceD30 = new Dice(
+  diceThirtyUrl,
+  place,
+  template,
+  button,
+  diceThirtyArr,
+  "D30"
+);
 // diceD6.renderDice();
 diceD30.renderDice();
