@@ -6,6 +6,7 @@ class Dice {
     this.button = button;
     this.place = place;
     this.name = name;
+    this.dice;
 
     // this.objSymbols = objSymbols;
   }
@@ -24,8 +25,9 @@ class Dice {
     return clone;
   }
   renderDice() {
-    const dice = this._createDice();
-    this.place.appendChild(dice);
+    this.dice = this._createDice();
+    this.place.appendChild(this.dice);
+    console.log({ place: this.place, dice: this.dice });
   }
   _rollDice(result, container, button) {
     container.classList.add("dice-active");
@@ -41,7 +43,6 @@ class Dice {
         result.style = "font-size:72px; color:red";
       }
       result.textContent = this.diceValue[randomNum - 1];
-      console.log(randomNum);
       button.disabled = false;
     }, 500);
   }
