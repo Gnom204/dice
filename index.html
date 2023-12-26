@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dice Game</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body class="root">
+    <h1 class="choice-head">Выберите кубик</h1>
+    <div class="choose-dice"></div>
+    <div class="dices"></div>
+    <button class="butn">Бросить</button>
+    <template id="template">
+      <div class="dice-container">
+        <img src="" alt="" class="dice-img" />
+        <span class="dice-result"></span>
+      </div>
+    </template>
+
+    <template id="dice-choice">
+      <div class="choice-container">
+        <img src="" alt="Внешний вид кубика" class="choice-img" />
+        <span class="choice-name"></span>
+      </div>
+    </template>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
