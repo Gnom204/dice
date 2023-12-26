@@ -1,5 +1,5 @@
 import Dice from "./scripts/dice.js";
-const diceD6Url = "./source/dice6xblack.png";
+const diceD6Url = "./source/dice6xBlack.png";
 const diceD30Url = "./source/dice30xBlackFull.png";
 const template = document.querySelector("#template");
 const choiceTemplate = document.querySelector("#dice-choice");
