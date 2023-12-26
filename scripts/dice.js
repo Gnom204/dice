@@ -19,9 +19,13 @@ class Dice {
     img.alt = "Кубик";
     const result = clone.querySelector(".dice-result");
     result.textContent = "";
+    container.addEventListener("click", () => {
+      this._rollDice(result, container, this.button);
+    });
     this.button.addEventListener("click", () => {
       this._rollDice(result, container, this.button);
     });
+
     return clone;
   }
   renderDice() {
