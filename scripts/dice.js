@@ -36,15 +36,14 @@ class Dice {
   _rollDice(result, container, button) {
     container.classList.add("dice-active");
     result.textContent = "";
-    result.style = "font-size:56px; color:white";
     button.disabled = true;
-
+    result.classList.remove("dice-red");
     setTimeout(() => {
       container.classList.remove("dice-active");
 
       let randomNum = this._getRandomNum(1, this.diceValue.length + 1);
       if (this.diceValue[randomNum - 1] === "-") {
-        result.style = "font-size:72px; color:red";
+        result.classList.add("dice-red");
       }
       result.textContent = this.diceValue[randomNum - 1];
       button.disabled = false;

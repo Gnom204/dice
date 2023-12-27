@@ -1,5 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Merriweather&display=swap");
-
+@font-face {
+  font-family: "Zing";
+  src: url(./source/ofont.ru_Zing\ Rust.ttf);
+}
 .container {
   width: 70%;
   margin: auto;
@@ -17,6 +19,7 @@ body {
   margin: 0;
   max-width: 100vw;
   max-height: 100vh;
+  font-family: "Zing", sans-serif;
 }
 
 h1 {
@@ -74,7 +77,6 @@ img {
 }
 
 .root {
-  font-family: "Inter", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -102,7 +104,8 @@ img {
 
 .dice-result {
   position: absolute;
-  font-size: 5vw;
+  font-size: 56px;
+  color: white;
 }
 
 @keyframes rotation {
@@ -115,10 +118,11 @@ img {
 }
 
 .dice-active {
-  animation-name: rotation;
-  animation-duration: 40ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation: rotation 40ms infinite linear;
+  -webkit-animation: rotation 40ms infinite linear;
+  -moz-animation: rotation 40ms infinite linear;
+  -ms-animation: rotation 40ms infinite linear;
+  -o-animation: rotation 40ms infinite linear;
 }
 
 .choose-dice {
@@ -140,8 +144,16 @@ img {
 .choice-name {
 }
 
+.dice-red {
+  color: red;
+  font-size: 120px;
+}
+
 @media screen and (max-width: 590px) {
   .choice-head {
     font-size: 54px;
+  }
+  .dice-result {
+    font-size: 40px;
   }
 }
