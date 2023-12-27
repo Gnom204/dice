@@ -94,12 +94,13 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40%;
+  width: 50%;
 }
 
 .dice-img {
   position: relative;
   object-fit: contain;
+  cursor: pointer;
   width: 100%;
 }
 

@@ -1,6 +1,6 @@
 import Dice from "./scripts/dice.js";
 const diceD6Url = "./source/dice6xBlack.png";
-const diceD30Url = "./source/dice30xBlackFull.png";
+const diceD30Url = "./source/d30withoutGrane.png";
 const template = document.querySelector("#template");
 const choiceTemplate = document.querySelector("#dice-choice");
 const place = document.querySelector(".dices");
@@ -46,7 +46,7 @@ let diceCount = [
     name: "D6",
   },
   {
-    src: "./source/dice30xBlackFull.png",
+    src: "./source/d30withoutGrane.png",
     name: "D30",
   },
 ];
