@@ -16,38 +16,31 @@ const button = document.querySelector(".butn");
 const choisePlace = document.querySelector(".choose-dice");
 
 let diceD6Arr = ["1", "2", "3", "4", "5", "-"];
-let diceD30Arr = [
+let diceD5Arr = [
   "1",
-  "2",
-  "3",
-  "4",
   "5",
-  "6",
-  "7",
-  "8",
-  "9",
   "10",
-  "11",
-  "12",
-  "13",
-  "14",
   "15",
-  "16",
-  "17",
-  "18",
-  "19",
   "20",
-  "21",
-  "22",
-  "23",
-  "24",
   "25",
-  "26",
-  "27",
-  "28",
-  "29",
   "30",
+  "35",
+  "40",
+  "45",
+  "50",
+  "55",
+  "60",
+  "65",
+  "70",
+  "75",
+  "80",
+  "85",
+  "90",
+  "95",
+  "101",
 ];
+
+let isTwo = false;
 
 const fillArr = (num) => {
   let arr = [];
@@ -60,7 +53,7 @@ const fillArr = (num) => {
   return arr;
 };
 
-let diceD5Arr = fillArr(101);
+let diceD30Arr = fillArr(30);
 
 let diceCount = [
   {
@@ -84,6 +77,7 @@ function createChoice(src, name) {
   const text = cloneChoice.querySelector(".choice-name");
   img.id = name;
   img.src = src;
+
   text.textContent = name;
   img.addEventListener("click", postDice);
   return cloneChoice;
@@ -126,10 +120,3 @@ const diceD30 = new DiceD30(
 );
 const diceD5 = new DiceD5(diceD5Url, place, template, button, diceD5Arr, "D5");
 diceD6.renderDice();
-
-const testAddres = new TestAddres("Андрей", 675, "Ясная улица 8");
-console.log({ addres: testAddres.getAddres(), name: testAddres.getName() });
-
-const testAnimal = new TestAnimal("Саня", 230, "Шолохова улица 12");
-console.log({ animal: testAnimal.getAnimal(), name: testAnimal.getName() });
-testAnimal.getName();
