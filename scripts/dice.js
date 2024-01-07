@@ -6,6 +6,7 @@ class Dice {
     this.button = button;
     this.place = place;
     this.name = name;
+    this.result;
     this.dice;
 
     // this.objSymbols = objSymbols;
@@ -38,19 +39,27 @@ class Dice {
     result.textContent = "";
     button.disabled = true;
     result.classList.remove("dice-red");
+    let randomNum = this._getRandomNum(1, this.diceValue.length + 1);
+    let resValue = this.diceValue[randomNum - 1];
+    this.result = resValue;
+    this.getResult();
+
     setTimeout(() => {
       container.classList.remove("dice-active");
 
-      let randomNum = this._getRandomNum(1, this.diceValue.length + 1);
-      if (this.diceValue[randomNum - 1] === "-") {
+      if (resValue === "-") {
         result.classList.add("dice-red");
       }
-      result.textContent = this.diceValue[randomNum - 1];
+      result.textContent = resValue;
       button.disabled = false;
     }, 500);
   }
   _getRandomNum(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
+  }
+  getResult() {
+    console.log(this.result);
+    return this.result;
   }
 }
 

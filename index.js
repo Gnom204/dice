@@ -11,6 +11,8 @@ const diceD5Url = "./source/diced5.png";
 const template = document.querySelector("#template");
 const choiceTemplate = document.querySelector("#dice-choice");
 
+const gameAlert = document.querySelector(".game-alert");
+
 const place = document.querySelector(".dices");
 const button = document.querySelector(".butn");
 const choisePlace = document.querySelector(".choose-dice");
@@ -96,12 +98,14 @@ function postDice(e) {
     console.log("Выбран тот же кубик");
     return;
   } else if (id === "D6") {
+    gameAlert.textContent = "";
     place.firstElementChild.remove();
     diceD6.renderDice();
   } else if (id === "D30") {
     place.firstElementChild.remove();
     diceD30.renderDice();
   } else if (id === "D5") {
+    gameAlert.textContent = "";
     place.firstElementChild.remove();
     diceD5.renderDice();
   }
@@ -116,7 +120,8 @@ const diceD30 = new DiceD30(
   template,
   button,
   diceD30Arr,
-  "D30"
+  "D30",
+  gameAlert
 );
 const diceD5 = new DiceD5(diceD5Url, place, template, button, diceD5Arr, "D5");
 diceD6.renderDice();
