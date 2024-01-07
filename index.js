@@ -82,6 +82,7 @@ function createChoice(src, name) {
     img.classList.add("blocked-dice");
   }
   text.textContent = name;
+
   img.addEventListener("click", postDice);
   return cloneChoice;
 }
@@ -102,7 +103,7 @@ function postDice(e) {
     gameAlert.textContent = "";
     place.firstElementChild.remove();
     diceD6.renderDice();
-  } else if (id === "D30") {
+  } else if (id === "D30" && !needImg.classList.contains("blocked-dice")) {
     place.firstElementChild.remove();
     diceD30.renderDice();
   } else if (id === "D5") {
