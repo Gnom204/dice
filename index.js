@@ -51,7 +51,7 @@ let diceD30Arr = [
 
 const fillArr = (num) => {
   let arr = [];
-  let x = 0;
+  let x = 1;
   while (x < num) {
     arr.push(x.toString());
     x++;
