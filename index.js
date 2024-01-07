@@ -42,8 +42,6 @@ let diceD5Arr = [
   "101",
 ];
 
-let isTwo = false;
-
 const fillArr = (num) => {
   let arr = [];
   let x = 1;
@@ -71,7 +69,7 @@ let diceCount = [
     name: "D5",
   },
 ];
-
+let needImg;
 function createChoice(src, name) {
   const cloneChoice = choiceTemplate.content.cloneNode(true);
 
@@ -79,7 +77,10 @@ function createChoice(src, name) {
   const text = cloneChoice.querySelector(".choice-name");
   img.id = name;
   img.src = src;
-
+  if (img.id === "D30") {
+    needImg = img;
+    img.classList.add("blocked-dice");
+  }
   text.textContent = name;
   img.addEventListener("click", postDice);
   return cloneChoice;
@@ -113,7 +114,15 @@ function postDice(e) {
 
 choiseDice();
 
-const diceD6 = new DiceD6(diceD6Url, place, template, button, diceD6Arr, "D6");
+const diceD6 = new DiceD6(
+  diceD6Url,
+  place,
+  template,
+  button,
+  diceD6Arr,
+  "D6",
+  needImg
+);
 const diceD30 = new DiceD30(
   diceD30Url,
   place,

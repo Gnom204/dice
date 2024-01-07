@@ -8,7 +8,7 @@ class Dice {
     this.name = name;
     this.result;
     this.dice;
-
+    this.isEvent;
     // this.objSymbols = objSymbols;
   }
   _createDice() {
@@ -18,6 +18,7 @@ class Dice {
     const img = clone.querySelector(".dice-img");
     img.src = this.diceSrc;
     img.alt = "Кубик";
+
     const result = clone.querySelector(".dice-result");
     result.textContent = "";
     container.addEventListener("click", () => {
@@ -46,10 +47,6 @@ class Dice {
 
     setTimeout(() => {
       container.classList.remove("dice-active");
-
-      if (resValue === "-") {
-        result.classList.add("dice-red");
-      }
       result.textContent = resValue;
       button.disabled = false;
     }, 500);
