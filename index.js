@@ -1,8 +1,16 @@
-import Dice from "./scripts/dice.js";
+import { DiceD30 } from "./scripts/diced30.js";
+import { DiceD5 } from "./scripts/diced5.js";
+import { DiceD6 } from "./scripts/diced6.js";
+import { TestAddres } from "./scripts/testAddres.js";
+import { TestAnimal } from "./scripts/testAnimal.js";
+
 const diceD6Url = "./source/dice6xBlack.png";
 const diceD30Url = "./source/d30withoutGrane.png";
+const diceD5Url = "./source/diced5.png";
+
 const template = document.querySelector("#template");
 const choiceTemplate = document.querySelector("#dice-choice");
+
 const place = document.querySelector(".dices");
 const button = document.querySelector(".butn");
 const choisePlace = document.querySelector(".choose-dice");
@@ -40,6 +48,20 @@ let diceD30Arr = [
   "29",
   "30",
 ];
+
+const fillArr = (num) => {
+  let arr = [];
+  let x = 0;
+  while (x < num) {
+    arr.push(x.toString());
+    x++;
+  }
+  console.log(arr);
+  return arr;
+};
+
+let diceD5Arr = fillArr(101);
+
 let diceCount = [
   {
     src: "./source/dice6xBlack.png",
@@ -48,6 +70,10 @@ let diceCount = [
   {
     src: "./source/d30withoutGrane.png",
     name: "D30",
+  },
+  {
+    src: "./source/diced5.png",
+    name: "D5",
   },
 ];
 
@@ -75,19 +101,22 @@ function postDice(e) {
   if (id === place.firstElementChild.id) {
     console.log("Выбран тот же кубик");
     return;
-  } else if (id === "D6" && place.firstElementChild.id === "D30") {
+  } else if (id === "D6") {
     place.firstElementChild.remove();
     diceD6.renderDice();
-  } else if (id === "D30" && place.firstElementChild.id === "D6") {
+  } else if (id === "D30") {
     place.firstElementChild.remove();
     diceD30.renderDice();
+  } else if (id === "D5") {
+    place.firstElementChild.remove();
+    diceD5.renderDice();
   }
 }
 
 choiseDice();
 
-const diceD6 = new Dice(diceD6Url, place, template, button, diceD6Arr, "D6");
-const diceD30 = new Dice(
+const diceD6 = new DiceD6(diceD6Url, place, template, button, diceD6Arr, "D6");
+const diceD30 = new DiceD30(
   diceD30Url,
   place,
   template,
@@ -95,5 +124,12 @@ const diceD30 = new Dice(
   diceD30Arr,
   "D30"
 );
-// diceD6.renderDice();
-diceD30.renderDice();
+const diceD5 = new DiceD5(diceD5Url, place, template, button, diceD5Arr, "D5");
+diceD6.renderDice();
+
+const testAddres = new TestAddres("Андрей", 675, "Ясная улица 8");
+console.log({ addres: testAddres.getAddres(), name: testAddres.getName() });
+
+const testAnimal = new TestAnimal("Саня", 230, "Шолохова улица 12");
+console.log({ animal: testAnimal.getAnimal(), name: testAnimal.getName() });
+testAnimal.getName();
