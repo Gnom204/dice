@@ -9,6 +9,7 @@ class Dice {
     this.result;
     this.dice;
     this.isEvent;
+    this.resultNode;
     // this.objSymbols = objSymbols;
   }
   _createDice() {
@@ -20,6 +21,7 @@ class Dice {
     img.alt = "Кубик";
 
     const result = clone.querySelector(".dice-result");
+    this.resultNode = result;
     result.textContent = "";
     container.addEventListener("click", () => {
       this._rollDice(result, container, this.button);
@@ -57,6 +59,12 @@ class Dice {
   getResult() {
     console.log(this.result);
     return this.result;
+  }
+  getDice() {
+    return this.dice;
+  }
+  setResult(res) {
+    this.result = res;
   }
 }
 

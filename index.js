@@ -4,6 +4,8 @@ import { DiceD6 } from "./scripts/diced6.js";
 import { TestAddres } from "./scripts/testAddres.js";
 import { TestAnimal } from "./scripts/testAnimal.js";
 
+const mechanicsTemplate = document.querySelector("#mechanics");
+
 const diceD6Url = "./source/dice6xBlack.png";
 const diceD30Url = "./source/d30withoutGrane.png";
 const diceD5Url = "./source/diced5.png";
@@ -137,5 +139,13 @@ const diceD30 = new DiceD30(
   needImg,
   () => diceD6.renderDice()
 );
-const diceD5 = new DiceD5(diceD5Url, place, template, button, diceD5Arr, "D5");
+const diceD5 = new DiceD5(
+  diceD5Url,
+  place,
+  template,
+  button,
+  diceD5Arr,
+  "D5",
+  mechanicsTemplate
+);
 diceD6.renderDice();

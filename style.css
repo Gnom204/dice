@@ -51,7 +51,7 @@ img {
   padding: 16px 25px 16px 25px;
   text-decoration: none;
   cursor: pointer;
-  margin-top: 100px;
+  margin-top: 150px;
   font-family: "Zing", sans-serif;
 }
 
@@ -85,6 +85,7 @@ img {
 }
 
 .dices {
+  position: relative;
   display: flex;
   justify-content: center;
   margin: auto;
@@ -164,4 +165,44 @@ img {
   .dice-result {
     font-size: 40px;
   }
+}
+.choise-container {
+  position: absolute;
+  top: -60px;
+  gap: 30px;
+  display: grid;
+  max-width: 400px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.mechanic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.attack {
+  grid-column-start: 1;
+  grid-row-start: 2;
+  grid-column-end: 1;
+  grid-row-end: 2;
+  cursor: pointer;
+}
+.defense {
+  grid-column-start: 3;
+  grid-row-start: 2;
+  grid-column-end: 3;
+  grid-row-end: 2;
+  cursor: pointer;
+}
+.heal {
+  grid-column-start: 2;
+  grid-row-start: 3;
+  grid-column-end: 2;
+  grid-row-end: 3;
+  cursor: pointer;
+}
+.mechanics-img {
+  width: 100%;
 }

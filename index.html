@@ -14,13 +14,41 @@
     <span class="game-alert"></span>
     <button class="butn">Бросить</button>
     <div class="popup"></div>
+
     <template id="template">
       <div class="dice-container">
         <img src="" alt="" class="dice-img" />
         <span class="dice-result"></span>
       </div>
     </template>
-
+    <template id="mechanics">
+      <div class="choise-container">
+        <div class="mechanics attack">
+          <img
+            class="mechanics-img attack-img"
+            src="./source/sword.png"
+            alt="Иконка атаки"
+          />
+          <span class="attack-text">Атака</span>
+        </div>
+        <div class="mechanic defense">
+          <img
+            class="mechanics-img defense"
+            src="./source/shield.png"
+            alt="Иконка атаки"
+          />
+          <span class="defense-text">Защита</span>
+        </div>
+        <div class="mechanic heal">
+          <img
+            class="mechanics-img heal-img"
+            src="./source/heal.png"
+            alt="Иконка атаки"
+          />
+          <span class="heal-text">Восстановление</span>
+        </div>
+      </div>
+    </template>
     <template id="dice-choice">
       <div class="choice-container">
         <img src="" alt="Внешний вид кубика" class="choice-img" />
