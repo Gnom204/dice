@@ -1,13 +1,32 @@
 import Dice from "./dice.js";
 
 export class DiceD30 extends Dice {
-  constructor(diceSrc, place, template, button, diceValue, name, gameAlert) {
+  constructor(
+    diceSrc,
+    place,
+    template,
+    button,
+    diceValue,
+    name,
+    gameAlert,
+    needImg,
+    diceRender
+  ) {
     super(diceSrc, place, template, button, diceValue, name);
     this.gameAlert = gameAlert;
+    this.needImg = needImg;
+    this.isRoll;
+    this.diceRender = diceRender;
   }
   _rollDice(result, container, button) {
-    this.getResult();
-    super._rollDice(result, container, button);
+    if (this.needImg.classList.contains("blocked-dice")) {
+      this.place.firstElementChild.remove();
+      this.diceRender();
+    } else {
+      this.getResult();
+      super._rollDice(result, container, button);
+      this.needImg.classList.add("blocked-dice");
+    }
   }
   getResult() {
     super.getResult();

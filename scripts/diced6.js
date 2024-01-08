@@ -1,9 +1,19 @@
 import Dice from "./dice.js";
 
 export class DiceD6 extends Dice {
-  constructor(diceSrc, place, template, button, diceValue, name, needImg) {
+  constructor(
+    diceSrc,
+    place,
+    template,
+    button,
+    diceValue,
+    name,
+    needImg,
+    gameAlert
+  ) {
     super(diceSrc, place, template, button, diceValue, name);
     this.needImg = needImg;
+    this.gameAlert = gameAlert;
   }
   _rollDice(result, container, button) {
     super._rollDice(result, container, button);
@@ -14,6 +24,7 @@ export class DiceD6 extends Dice {
     if (this.result === "2") {
       this.needImg.classList.remove("blocked-dice");
     }
+    this.gameAlert.textContent = "";
   }
   getResult() {
     super.getResult();

@@ -110,6 +110,7 @@ function postDice(e) {
     gameAlert.textContent = "";
     place.firstElementChild.remove();
     diceD5.renderDice();
+  } else if (needImg.classList.contains("blocked-dice")) {
   }
 }
 
@@ -122,7 +123,8 @@ const diceD6 = new DiceD6(
   button,
   diceD6Arr,
   "D6",
-  needImg
+  needImg,
+  gameAlert
 );
 const diceD30 = new DiceD30(
   diceD30Url,
@@ -131,7 +133,9 @@ const diceD30 = new DiceD30(
   button,
   diceD30Arr,
   "D30",
-  gameAlert
+  gameAlert,
+  needImg,
+  () => diceD6.renderDice()
 );
 const diceD5 = new DiceD5(diceD5Url, place, template, button, diceD5Arr, "D5");
 diceD6.renderDice();
