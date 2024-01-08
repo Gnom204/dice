@@ -101,15 +101,27 @@ function postDice(e) {
   if (id === place.firstElementChild.id) {
     console.log("Выбран тот же кубик");
     return;
-  } else if (id === "D6") {
+  } else if (id === "D6" && place.firstElementChild.id != "D5") {
+    place.firstElementChild.remove();
+    diceD6.renderDice();
+  } else if (id === "D6" && place.firstElementChild.id === "D5") {
     gameAlert.textContent = "";
     place.firstElementChild.remove();
     place.firstElementChild.remove();
     diceD6.renderDice();
-  } else if (id === "D30" && !needImg.classList.contains("blocked-dice")) {
+  } else if (
+    id === "D30" &&
+    !needImg.classList.contains("blocked-dice") &&
+    place.firstElementChild.id != "D5"
+  ) {
     place.firstElementChild.remove();
     diceD30.renderDice();
-  } else if (id === "D5") {
+  } else if (id === "D30" && place.firstElementChild.id === "D5") {
+    place.firstElementChild.remove();
+    place.firstElementChild.remove();
+    diceD30.renderDice();
+  } else if (id === "D5" && place.firstElementChild.id != "D5") {
+    console.log(place.firstElementChild);
     gameAlert.textContent = "";
     place.firstElementChild.remove();
     diceD5.renderDice();
