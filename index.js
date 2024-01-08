@@ -59,16 +59,16 @@ let diceD30Arr = fillArr(30);
 
 let diceCount = [
   {
+    src: "./source/diced5.png",
+    name: "D5",
+  },
+  {
     src: "./source/dice6xBlack.png",
     name: "D6",
   },
   {
     src: "./source/d30withoutGrane.png",
     name: "D30",
-  },
-  {
-    src: "./source/diced5.png",
-    name: "D5",
   },
 ];
 let needImg;
@@ -103,6 +103,7 @@ function postDice(e) {
     return;
   } else if (id === "D6") {
     gameAlert.textContent = "";
+    place.firstElementChild.remove();
     place.firstElementChild.remove();
     diceD6.renderDice();
   } else if (id === "D30" && !needImg.classList.contains("blocked-dice")) {
