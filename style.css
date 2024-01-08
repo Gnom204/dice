@@ -52,6 +52,7 @@ img {
   text-decoration: none;
   cursor: pointer;
   margin-top: 100px;
+  font-family: "Zing", sans-serif;
 }
 
 .butn:disabled {
@@ -148,7 +149,7 @@ img {
 }
 
 .game-alert {
-  font-size: 16px;
+  font-size: 24px;
 }
 
 .dice-red {
