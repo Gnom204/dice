@@ -6,6 +6,8 @@ import { TestAnimal } from "./scripts/testAnimal.js";
 
 const mechanicsTemplate = document.querySelector("#mechanics");
 
+const healContainer = document.querySelector("#heal-con");
+
 const diceD6Url = "./source/dice6xBlack.png";
 const diceD30Url = "./source/d30withoutGrane.png";
 const diceD5Url = "./source/diced5.png";
@@ -16,7 +18,7 @@ const choiceTemplate = document.querySelector("#dice-choice");
 const gameAlert = document.querySelector(".game-alert");
 
 const place = document.querySelector(".dices");
-const button = document.querySelector(".butn");
+const button = document.querySelector("#butn");
 const choisePlace = document.querySelector(".choose-dice");
 
 let diceD6Arr = ["1", "2", "3", "4", "5", "-"];
@@ -109,6 +111,7 @@ function postDice(e) {
     gameAlert.textContent = "";
     place.firstElementChild.remove();
     place.firstElementChild.remove();
+    healContainer.classList.add("heal-invis");
     diceD6.renderDice();
   } else if (
     id === "D30" &&
@@ -122,6 +125,7 @@ function postDice(e) {
     place.firstElementChild.id === "D5" &&
     !needImg.classList.contains("blocked-dice")
   ) {
+    healContainer.classList.add("heal-invis");
     place.firstElementChild.remove();
     place.firstElementChild.remove();
     diceD30.renderDice();
@@ -132,6 +136,21 @@ function postDice(e) {
     diceD5.renderDice();
   }
 }
+
+function heal() {
+  const healInput = healContainer.querySelector("#heal-input");
+  const healBtn = healContainer.querySelector(".heal-btn");
+  const healText = healContainer.querySelector(".heal-text");
+  let hp;
+  healInput.addEventListener("input", () => {
+    hp = parseInt(healInput.value) + (parseInt(healInput.value) / 100) * 40;
+  });
+  healBtn.addEventListener("click", () => {
+    healText.textContent = `Ваше здоровье восполнено до ${hp}`;
+  });
+}
+
+heal();
 
 choiseDice();
 
@@ -164,6 +183,7 @@ const diceD5 = new DiceD5(
   button,
   diceD5Arr,
   "D5",
-  mechanicsTemplate
+  mechanicsTemplate,
+  healContainer
 );
 diceD6.renderDice();

@@ -8,7 +8,8 @@ export class DiceD5 extends Dice {
     button,
     diceValue,
     name,
-    mechanicsTemplate
+    mechanicsTemplate,
+    healContainer
   ) {
     super(diceSrc, place, template, button, diceValue, name);
     this.mechanicsTemplate = mechanicsTemplate;
@@ -17,6 +18,7 @@ export class DiceD5 extends Dice {
     this.result;
     this.atack = 25;
     this.isDef = false;
+    this.healContainer = healContainer;
   }
   renderDice() {
     super.renderDice();
@@ -44,6 +46,7 @@ export class DiceD5 extends Dice {
     heal.addEventListener("click", () => {
       console.log(this.place.firstElementChild);
       console.log("Лечение");
+      this._healRender();
       this._plusRender();
     });
     this.mechanicsNode = clone;
@@ -78,5 +81,8 @@ export class DiceD5 extends Dice {
     setTimeout(() => {
       this.place.removeChild(plusContainer);
     }, 1800);
+  }
+  _healRender() {
+    this.healContainer.classList.remove("heal-invis");
   }
 }

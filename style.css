@@ -241,3 +241,22 @@ img {
     top: 50px;
   }
 }
+
+.heal-invis {
+  display: none !important;
+}
+
+.heal-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 11;
+}
+.heal-btn {
+  font-size: 14px;
+  padding: 5px 20px;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}

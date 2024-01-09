@@ -10,10 +10,16 @@
   <body class="root">
     <h1 class="choice-head">Выберите дайс</h1>
     <div class="choose-dice"></div>
+    <div id="heal-con" class="heal-invis heal-container">
+      <input type="number" name="heal-input" id="heal-input" />
+      <button type="button" class="butn heal-btn">
+        <span>Восстановить</span>
+      </button>
+      <span class="heal-text">Введите здоровье своего персонажа</span>
+    </div>
     <div class="dices"></div>
     <span class="game-alert"></span>
-    <button class="butn">Бросить</button>
-    <div class="popup"></div>
+    <button class="butn" id="butn">Бросить</button>
 
     <template id="template">
       <div class="dice-container">
