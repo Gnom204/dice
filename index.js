@@ -116,7 +116,11 @@ function postDice(e) {
   ) {
     place.firstElementChild.remove();
     diceD30.renderDice();
-  } else if (id === "D30" && place.firstElementChild.id === "D5") {
+  } else if (
+    id === "D30" &&
+    place.firstElementChild.id === "D5" &&
+    !needImg.classList.contains("blocked-dice")
+  ) {
     place.firstElementChild.remove();
     place.firstElementChild.remove();
     diceD30.renderDice();
