@@ -143,7 +143,8 @@ const diceD6 = new DiceD6(
   diceD6Arr,
   "D6",
   needImg,
-  gameAlert
+  gameAlert,
+  () => diceD30.renderDice()
 );
 const diceD30 = new DiceD30(
   diceD30Url,
