@@ -22,6 +22,7 @@ export class DiceD30 extends Dice {
     if (this.needImg.classList.contains("blocked-dice")) {
       this.place.firstElementChild.remove();
       this.diceRender();
+      this.gameAlert.textContent = "";
     } else {
       this.getResult();
       super._rollDice(result, container, button);

@@ -15,7 +15,8 @@ export class DiceD5 extends Dice {
     this.mechanicsNode;
     this.resultNode;
     this.result;
-    this.atack = 10;
+    this.atack = 25;
+    this.isDef = false;
   }
   renderDice() {
     super.renderDice();
@@ -34,15 +35,26 @@ export class DiceD5 extends Dice {
     atack.addEventListener("click", () => {
       console.log(parseInt(this.result) + 10);
       this.resultNode.textContent = parseInt(this.result) + this.atack;
-      this.atack >= 0 ? (this.atack -= 2) : (this.atack = 10);
       console.log("Атака");
     });
     defense.addEventListener("click", () => {
+      this.isDef = true;
       console.log("Защита");
     });
     heal.addEventListener("click", () => {
       console.log("Лечение");
     });
     this.mechanicsNode = clone;
+  }
+  _rollDice(result, container, button) {
+    super._rollDice(result, container, button);
+    if (this.isDef) {
+      setTimeout(() => {
+        this.resultNode.textContent = parseInt(this.result) / 2;
+        this.isDef = false;
+      }, 500);
+    } else {
+      console.log("защиты нет");
+    }
   }
 }
