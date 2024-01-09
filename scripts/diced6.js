@@ -22,7 +22,9 @@ export class DiceD6 extends Dice {
       result.classList.add("dice-red");
     }
     if (this.result === "2") {
-      this.needImg.classList.remove("blocked-dice");
+      setTimeout(() => {
+        this.needImg.classList.remove("blocked-dice");
+      }, 500);
     }
     this.gameAlert.textContent = "";
   }
