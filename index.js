@@ -103,6 +103,7 @@ function postDice(e) {
     return;
   } else if (id === "D6" && place.firstElementChild.id != "D5") {
     place.firstElementChild.remove();
+    gameAlert.textContent = "";
     diceD6.renderDice();
   } else if (id === "D6" && place.firstElementChild.id === "D5") {
     gameAlert.textContent = "";
@@ -129,7 +130,6 @@ function postDice(e) {
     gameAlert.textContent = "";
     place.firstElementChild.remove();
     diceD5.renderDice();
-  } else if (needImg.classList.contains("blocked-dice")) {
   }
 }
 
