@@ -7,6 +7,7 @@ import { TestAnimal } from "./scripts/testAnimal.js";
 const mechanicsTemplate = document.querySelector("#mechanics");
 
 const healContainer = document.querySelector("#heal-con");
+const healText = document.querySelector(".heal-text");
 
 const diceD6Url = "./source/dice6xBlack.png";
 const diceD30Url = "./source/d30withoutGrane.png";
@@ -112,6 +113,7 @@ function postDice(e) {
     place.firstElementChild.remove();
     place.firstElementChild.remove();
     healContainer.classList.add("heal-invis");
+    healText.textContent = "Введите ваше текущее здоровье";
     diceD6.renderDice();
   } else if (
     id === "D30" &&
@@ -126,6 +128,7 @@ function postDice(e) {
     !needImg.classList.contains("blocked-dice")
   ) {
     healContainer.classList.add("heal-invis");
+    healText.textContent = "Введите ваше текущее здоровье";
     place.firstElementChild.remove();
     place.firstElementChild.remove();
     diceD30.renderDice();
@@ -140,12 +143,12 @@ function postDice(e) {
 function heal() {
   const healInput = healContainer.querySelector("#heal-input");
   const healBtn = healContainer.querySelector(".heal-btn");
-  const healText = healContainer.querySelector(".heal-text");
   let hp;
   healInput.addEventListener("input", () => {
     hp = parseInt(healInput.value) + (parseInt(healInput.value) / 100) * 40;
   });
   healBtn.addEventListener("click", () => {
+    healInput.value = "";
     healText.textContent = `Ваше здоровье восполнено до ${hp}`;
   });
 }
