@@ -43,6 +43,7 @@ export class DiceD5 extends Dice {
     });
     heal.addEventListener("click", () => {
       console.log("Лечение");
+      this._plusRender();
     });
     this.mechanicsNode = clone;
   }
@@ -56,5 +57,25 @@ export class DiceD5 extends Dice {
     } else {
       console.log("защиты нет");
     }
+  }
+  _plusRender() {
+    let value = Math.round(Math.random() * 60);
+    let x = 0;
+    const plusContainer = document.createElement("div");
+    plusContainer.classList.add("plus-container");
+    while (x < value) {
+      let xCor = Math.round(Math.random() * 150);
+      let yCor = Math.round(Math.random() * 150);
+      const plus = document.createElement("div");
+      plus.classList.add("plus");
+      plus.style.top = `${yCor}px`;
+      plus.style.left = `${xCor}px`;
+      plusContainer.insertAdjacentElement("afterbegin", plus);
+      this.place.insertAdjacentElement("afterbegin", plusContainer);
+      x++;
+    }
+    setTimeout(() => {
+      this.place.removeChild(plusContainer);
+    }, 1800);
   }
 }

@@ -148,8 +148,8 @@ img {
 }
 
 .choice-container:nth-child(2) {
-  margin-right: 20%;
-  margin-left: 5%;
+  margin-left: 20%;
+  margin-right: 5%;
 }
 
 .choice-img {
@@ -215,4 +215,29 @@ img {
 }
 .mechanics-img {
   width: 100%;
+}
+
+.plus-container {
+  animation: Up 2s ease infinite;
+  position: absolute;
+  top: 50px;
+  left: 25%;
+  z-index: 10;
+}
+
+.plus {
+  background-image: url(./source/plus-mini-1523-svgrepo-com.svg);
+  background-size: contain;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  fill: red;
+}
+@keyframes Up {
+  0% {
+    top: 150px;
+  }
+  100% {
+    top: 50px;
+  }
 }
