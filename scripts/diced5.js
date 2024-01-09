@@ -42,6 +42,7 @@ export class DiceD5 extends Dice {
       console.log("Защита");
     });
     heal.addEventListener("click", () => {
+      console.log(this.place.firstElementChild);
       console.log("Лечение");
       this._plusRender();
     });
@@ -71,7 +72,7 @@ export class DiceD5 extends Dice {
       plus.style.top = `${yCor}px`;
       plus.style.left = `${xCor}px`;
       plusContainer.insertAdjacentElement("afterbegin", plus);
-      this.place.insertAdjacentElement("afterbegin", plusContainer);
+      this.place.insertAdjacentElement("beforeend", plusContainer);
       x++;
     }
     setTimeout(() => {
