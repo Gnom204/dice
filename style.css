@@ -14,22 +14,6 @@
   margin: 10px;
 }
 
-body {
-  background-color: #ffffff;
-  margin: 0;
-  max-width: 100vw;
-  max-height: 100vh;
-  font-family: "Zing", sans-serif;
-}
-
-h1 {
-  margin: 30px;
-  text-shadow: 5px 0 #232931;
-  font-size: 4.5rem;
-  color: #4ecca3;
-  text-align: center;
-}
-
 p {
   font-size: 2rem;
   color: #4ecca3;
@@ -53,6 +37,10 @@ img {
   cursor: pointer;
   margin-top: 150px;
   font-family: "Zing", sans-serif;
+}
+
+.choose-head {
+  text-align: center;
 }
 
 .butn:disabled {
@@ -80,8 +68,11 @@ img {
 .root {
   display: flex;
   flex-direction: column;
-  align-items: center;
   font-family: "Zing", sans-serif;
+  background-color: #ffffff;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
 }
 
 .dices {
@@ -259,4 +250,10 @@ img {
   justify-content: center;
   align-items: center;
   margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .choose-head {
+    font-size: 1.5em;
+  }
 }

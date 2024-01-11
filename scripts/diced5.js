@@ -5,13 +5,12 @@ export class DiceD5 extends Dice {
     diceSrc,
     place,
     template,
-    button,
     diceValue,
     name,
     mechanicsTemplate,
     healContainer
   ) {
-    super(diceSrc, place, template, button, diceValue, name);
+    super(diceSrc, place, template, diceValue, name);
     this.mechanicsTemplate = mechanicsTemplate;
     this.mechanicsNode;
     this.resultNode;
@@ -51,8 +50,8 @@ export class DiceD5 extends Dice {
     });
     this.mechanicsNode = clone;
   }
-  _rollDice(result, container, button) {
-    super._rollDice(result, container, button);
+  _rollDice(result, container) {
+    super._rollDice(result, container);
     if (this.isDef) {
       setTimeout(() => {
         this.resultNode.textContent = parseInt(this.result) / 2;

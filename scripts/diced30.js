@@ -5,27 +5,26 @@ export class DiceD30 extends Dice {
     diceSrc,
     place,
     template,
-    button,
     diceValue,
     name,
     gameAlert,
     needImg,
     diceRender
   ) {
-    super(diceSrc, place, template, button, diceValue, name);
+    super(diceSrc, place, template, diceValue, name);
     this.gameAlert = gameAlert;
     this.needImg = needImg;
     this.isRoll;
     this.diceRender = diceRender;
   }
-  _rollDice(result, container, button) {
+  _rollDice(result, container) {
     if (this.needImg.classList.contains("blocked-dice")) {
       this.place.firstElementChild.remove();
       this.diceRender();
       this.gameAlert.textContent = "";
     } else {
       this.getResult();
-      super._rollDice(result, container, button);
+      super._rollDice(result, container);
       this.needImg.classList.add("blocked-dice");
     }
   }

@@ -3,7 +3,6 @@ class Dice {
     this.template = template;
     this.diceSrc = diceSrc;
     this.diceValue = diceValue;
-    this.button = button;
     this.place = place;
     this.name = name;
     this.result;
@@ -24,10 +23,7 @@ class Dice {
     this.resultNode = result;
     result.textContent = "";
     container.addEventListener("click", () => {
-      this._rollDice(result, container, this.button);
-    });
-    this.button.addEventListener("click", () => {
-      this._rollDice(result, container, this.button);
+      this._rollDice(result, container);
     });
 
     return clone;
@@ -37,10 +33,9 @@ class Dice {
     this.place.appendChild(this.dice);
     console.log({ place: this.place, dice: this.dice });
   }
-  _rollDice(result, container, button) {
+  _rollDice(result, container) {
     container.classList.add("dice-active");
     result.textContent = "";
-    button.disabled = true;
     result.classList.remove("dice-red");
     let randomNum = this._getRandomNum(1, this.diceValue.length + 1);
     let resValue = this.diceValue[randomNum - 1];
@@ -50,7 +45,6 @@ class Dice {
     setTimeout(() => {
       container.classList.remove("dice-active");
       result.textContent = resValue;
-      button.disabled = false;
     }, 500);
   }
   _getRandomNum(min, max) {

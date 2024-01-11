@@ -5,20 +5,19 @@ export class DiceD6 extends Dice {
     diceSrc,
     place,
     template,
-    button,
     diceValue,
     name,
     needImg,
     gameAlert,
     renderD30
   ) {
-    super(diceSrc, place, template, button, diceValue, name);
+    super(diceSrc, place, template, diceValue, name);
     this.needImg = needImg;
     this.gameAlert = gameAlert;
     this.renderD30 = renderD30;
   }
-  _rollDice(result, container, button) {
-    super._rollDice(result, container, button);
+  _rollDice(result, container) {
+    super._rollDice(result, container);
     this.getResult();
     if (this.result === "-") {
       result.classList.add("dice-red");
