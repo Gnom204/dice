@@ -1,5 +1,5 @@
 class Dice {
-  constructor(diceSrc, place, template, button, diceValue, name) {
+  constructor(diceSrc, place, template, diceValue, name) {
     this.template = template;
     this.diceSrc = diceSrc;
     this.diceValue = diceValue;
