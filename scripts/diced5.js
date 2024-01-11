@@ -79,7 +79,7 @@ export class DiceD5 extends Dice {
     }
     setTimeout(() => {
       this.place.removeChild(plusContainer);
-    }, 1800);
+    }, 1000);
   }
   _healRender() {
     this.healContainer.classList.remove("heal-invis");
