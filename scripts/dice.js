@@ -9,6 +9,7 @@ class Dice {
     this.dice;
     this.isEvent;
     this.resultNode;
+    this.cooldown = true;
     // this.objSymbols = objSymbols;
   }
   _createDice() {
@@ -23,7 +24,13 @@ class Dice {
     this.resultNode = result;
     result.textContent = "";
     container.addEventListener("click", () => {
-      this._rollDice(result, container);
+      if (this.cooldown) {
+        this._rollDice(result, container);
+        this.cooldown = false;
+      }
+      setTimeout(() => {
+        this.cooldown = true;
+      }, 500);
     });
 
     return clone;

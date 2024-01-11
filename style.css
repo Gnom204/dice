@@ -256,4 +256,7 @@ img {
   .choose-head {
     font-size: 1.5em;
   }
+  .dice-result {
+    font-size: 56px;
+  }
 }
