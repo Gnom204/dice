@@ -87,7 +87,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50%;
+  width: 70%;
 }
 
 .dice-img {
@@ -126,8 +126,8 @@ img {
 
 .choose-dice {
   display: flex;
-  width: 50%;
-  height: 50%;
+  width: 20%;
+  height: 20%;
 }
 .choice-container {
   position: relative;
@@ -161,10 +161,11 @@ img {
 
 .choise-container {
   position: absolute;
-  top: -60px;
-  gap: 30px;
+  left: -30px;
+  top: -20px;
+  gap: 90px;
   display: grid;
-  max-width: 400px;
+  width: 100%;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
 }
@@ -201,7 +202,7 @@ img {
   cursor: pointer;
 }
 .mechanics-img {
-  width: 100%;
+  width: 100px;
 }
 
 .plus-container {
@@ -246,6 +247,26 @@ img {
   justify-content: center;
   align-items: center;
   margin: 0;
+}
+
+@media screen and (max-width: 990px) {
+  .choose-dice {
+    width: 50%;
+    height: 50%;
+  }
+  .choise-container {
+    top: -60px;
+    gap: 50px;
+    left: 0;
+    max-width: 400px;
+  }
+  .mechanics-img {
+    width: 100%;
+  }
+  .dice-container {
+    margin-top: 50px;
+    width: 50%;
+  }
 }
 
 @media screen and (max-width: 600px) {
