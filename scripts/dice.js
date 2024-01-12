@@ -41,24 +41,31 @@ class Dice {
     console.log({ place: this.place, dice: this.dice });
   }
   _rollDice(result, container) {
-    container.classList.add("dice-active");
-    result.textContent = "";
-    result.classList.remove("dice-red");
-    let randomNum = this._getRandomNum(1, this.diceValue.length + 1);
-    let resValue = this.diceValue[randomNum - 1];
-    this.result = resValue;
-    this.getResult();
-
-    setTimeout(() => {
-      container.classList.remove("dice-active");
-      result.textContent = resValue;
-    }, 500);
+    if (this.cooldown) {
+      console.log("первый кул = " + this.cooldown);
+      this.cooldown = false;
+      container.classList.add("dice-active");
+      result.textContent = "";
+      result.classList.remove("dice-red");
+      let randomNum = this._getRandomNum(1, this.diceValue.length + 1);
+      let resValue = this.diceValue[randomNum - 1];
+      this.result = resValue;
+      this.getResult();
+      console.log("второй кул = " + this.cooldown);
+      setTimeout(() => {
+        container.classList.remove("dice-active");
+        result.textContent = resValue;
+        console.log("третий кул = " + this.cooldown);
+        this.cooldown = true;
+        console.log("четвертый кул = " + this.cooldown);
+      }, 500);
+    }
   }
+
   _getRandomNum(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
   }
   getResult() {
-    console.log(this.result);
     return this.result;
   }
   getDice() {
