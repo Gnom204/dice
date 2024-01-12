@@ -35,12 +35,14 @@ export class DiceD5 extends Dice {
 
     atack.addEventListener("click", () => {
       console.log(parseInt(this.result) + 10);
-      this.resultNode.textContent = parseInt(this.result) + this.atack;
+      this.result = parseInt(this.result) + this.atack;
+      this.resultNode.textContent = this.result;
       console.log("Атака");
     });
     defense.addEventListener("click", () => {
       this.isDef = true;
-      this.resultNode.textContent = parseInt(this.result) / 2;
+      this.result = parseInt(this.result) / 2;
+      this.resultNode.textContent = this.result;
       console.log("Защита");
     });
     heal.addEventListener("click", () => {
