@@ -99,7 +99,7 @@ img {
 
 .dice-result {
   position: absolute;
-  font-size: 56px;
+  font-size: 96px;
   color: white;
 }
 
@@ -271,7 +271,7 @@ img {
 
 @media screen and (max-width: 600px) {
   .choose-head {
-    font-size: 1.2em;
+    font-size: 0.9em;
   }
   .dice-result {
     font-size: 56px;

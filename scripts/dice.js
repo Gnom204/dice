@@ -44,6 +44,7 @@ class Dice {
       let randomNum = this._getRandomNum(1, this.diceValue.length + 1);
       let resValue = this.diceValue[randomNum - 1];
       this.result = resValue;
+      console.log("Выпавшее значение:" + resValue);
       this.getResult();
       console.log("второй кул = " + this.cooldown);
       setTimeout(() => {
