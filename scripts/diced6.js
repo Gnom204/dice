@@ -28,7 +28,7 @@ export class DiceD6 extends Dice {
         this.place.firstElementChild.remove();
         this.renderD30();
         this.needImg.classList.remove("blocked-dice");
-      }, 500);
+      }, 800);
     }
     this.gameAlert.textContent = "";
   }

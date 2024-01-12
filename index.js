@@ -19,7 +19,6 @@ const choiceTemplate = document.querySelector("#dice-choice");
 const gameAlert = document.querySelector(".game-alert");
 
 const place = document.querySelector(".dices");
-const button = document.querySelector("#butn");
 const choisePlace = document.querySelector(".choose-dice");
 
 let diceD6Arr = ["1", "2", "3", "4", "5", "—"];
