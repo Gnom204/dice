@@ -159,14 +159,6 @@ img {
   font-size: 120px;
 }
 
-@media screen and (max-width: 590px) {
-  .choice-head {
-    font-size: 54px;
-  }
-  .dice-result {
-    font-size: 40px;
-  }
-}
 .choise-container {
   position: absolute;
   top: -60px;
@@ -175,6 +167,10 @@ img {
   max-width: 400px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
+}
+
+.choice-name {
+  margin: 5px 0;
 }
 
 .mechanic {
@@ -254,9 +250,12 @@ img {
 
 @media screen and (max-width: 600px) {
   .choose-head {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
   .dice-result {
     font-size: 56px;
+  }
+  .choice-name {
+    font-size: 22px;
   }
 }

@@ -22,7 +22,7 @@ const place = document.querySelector(".dices");
 const button = document.querySelector("#butn");
 const choisePlace = document.querySelector(".choose-dice");
 
-let diceD6Arr = ["1", "2", "3", "4", "5", "-"];
+let diceD6Arr = ["1", "2", "3", "4", "5", "—"];
 let diceD5Arr = [
   "1",
   "5",

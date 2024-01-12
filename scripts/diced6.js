@@ -18,8 +18,10 @@ export class DiceD6 extends Dice {
   }
   _rollDice(result, container) {
     super._rollDice(result, container);
+    result.classList.remove("dice-red");
+
     this.getResult();
-    if (this.result === "-") {
+    if (this.result === "—") {
       result.classList.add("dice-red");
     }
     if (this.result === "2") {
