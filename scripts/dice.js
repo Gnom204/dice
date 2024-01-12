@@ -24,13 +24,7 @@ class Dice {
     this.resultNode = result;
     result.textContent = "";
     container.addEventListener("click", () => {
-      if (this.cooldown) {
-        this._rollDice(result, container);
-        this.cooldown = false;
-      }
-      setTimeout(() => {
-        this.cooldown = true;
-      }, 500);
+      this._rollDice(result, container);
     });
 
     return clone;
@@ -56,8 +50,10 @@ class Dice {
         container.classList.remove("dice-active");
         result.textContent = resValue;
         console.log("третий кул = " + this.cooldown);
-        this.cooldown = true;
-        console.log("четвертый кул = " + this.cooldown);
+        setTimeout(() => {
+          this.cooldown = true;
+          console.log("четвертый кул = " + this.cooldown);
+        }, 200);
       }, 500);
     }
   }
