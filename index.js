@@ -100,8 +100,11 @@ function choiseDice() {
 
 function postDice(e) {
   const { id } = e.target;
-  if (id === place.firstElementChild.id) {
+  if (e.target.classList.contains("blocked-dice")) {
+    console.log("Нельзя выбрать");
+  } else if (id === place.firstElementChild.id) {
     console.log("Выбран тот же кубик");
+    console.log(place.firstElementChild.firstElementChild.classList);
     return;
   } else if (id === "D6" && place.firstElementChild.id != "D5") {
     place.firstElementChild.remove();
@@ -156,6 +159,9 @@ heal();
 
 choiseDice();
 
+const pasiveDice1 = document.querySelector("#D5");
+const pasiveDice2 = document.querySelector("#D6");
+
 const diceD6 = new DiceD6(
   diceD6Url,
   place,
@@ -164,7 +170,9 @@ const diceD6 = new DiceD6(
   "D6",
   needImg,
   gameAlert,
-  () => diceD30.renderDice()
+  () => diceD30.renderDice(),
+  pasiveDice1,
+  pasiveDice2
 );
 const diceD30 = new DiceD30(
   diceD30Url,
@@ -174,7 +182,9 @@ const diceD30 = new DiceD30(
   "D30",
   gameAlert,
   needImg,
-  () => diceD6.renderDice()
+  () => diceD6.renderDice(),
+  pasiveDice1,
+  pasiveDice2
 );
 const diceD5 = new DiceD5(
   diceD5Url,

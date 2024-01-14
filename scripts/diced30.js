@@ -9,26 +9,34 @@ export class DiceD30 extends Dice {
     name,
     gameAlert,
     needImg,
-    diceRender
+    diceRender,
+    pasivedice1,
+    pasivedice2
   ) {
     super(diceSrc, place, template, diceValue, name);
     this.gameAlert = gameAlert;
     this.needImg = needImg;
-    this.isRoll;
+    this.isRoll = true;
     this.diceRender = diceRender;
     this.canClick = true;
+    this.pasivedice1 = pasivedice1;
+    this.pasivedice2 = pasivedice2;
   }
   _rollDice(result, container) {
     if (this.canClick) {
       this.canClick = false;
-      if (this.needImg.classList.contains("blocked-dice")) {
+      if (this.isRoll) {
+        this.getResult();
+        super._rollDice(result, container);
+        this.isRoll = false;
+      } else {
         this.place.firstElementChild.remove();
         this.diceRender();
         this.gameAlert.textContent = "";
-      } else {
-        this.getResult();
-        super._rollDice(result, container);
         this.needImg.classList.add("blocked-dice");
+        this.isRoll = true;
+        this.pasivedice1.classList.remove("blocked-dice");
+        this.pasivedice2.classList.remove("blocked-dice");
       }
       setTimeout(() => {
         this.canClick = true;
