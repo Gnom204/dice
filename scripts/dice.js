@@ -36,7 +36,6 @@ class Dice {
   }
   _rollDice(result, container) {
     if (this.cooldown) {
-      console.log("первый кул = " + this.cooldown);
       this.cooldown = false;
       container.classList.add("dice-active");
       result.textContent = "";
@@ -44,16 +43,12 @@ class Dice {
       let randomNum = this._getRandomNum(1, this.diceValue.length + 1);
       let resValue = this.diceValue[randomNum - 1];
       this.result = resValue;
-      console.log("Выпавшее значение:" + resValue);
       this.getResult();
-      console.log("второй кул = " + this.cooldown);
       setTimeout(() => {
         container.classList.remove("dice-active");
         result.textContent = resValue;
-        console.log("третий кул = " + this.cooldown);
         setTimeout(() => {
           this.cooldown = true;
-          console.log("четвертый кул = " + this.cooldown);
         }, 200);
       }, 500);
     }

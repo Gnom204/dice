@@ -160,7 +160,7 @@ img {
 
 .dice-red {
   color: red;
-  font-size: 120px;
+  font-size: 140px !important;
 }
 
 .choise-container {
@@ -251,6 +251,10 @@ img {
   justify-content: center;
   align-items: center;
   margin: 0;
+}
+
+#D30 > .dice-result {
+  font-size: 56px !important;
 }
 
 @media screen and (max-width: 990px) {
