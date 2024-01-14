@@ -9,10 +9,11 @@
   </head>
 
   <body class="root">
-    <h1 class="choose-head">
-      для выбора и взаимодействия следует нажать на нужный дайс
-    </h1>
+    <h1 class="choose-head">Нажмите на нужный дайс</h1>
     <div class="choose-dice"></div>
+
+    <div class="dices"></div>
+    <span class="game-alert"></span>
     <div id="heal-con" class="heal-invis heal-container">
       <input type="number" name="heal-input" id="heal-input" />
       <button type="button" class="butn heal-btn">
@@ -20,8 +21,6 @@
       </button>
       <span class="heal-text">Введите ваше текущее здоровье</span>
     </div>
-    <div class="dices"></div>
-    <span class="game-alert"></span>
 
     <template id="template">
       <div class="dice-container">

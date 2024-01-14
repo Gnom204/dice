@@ -16,16 +16,23 @@ export class DiceD30 extends Dice {
     this.needImg = needImg;
     this.isRoll;
     this.diceRender = diceRender;
+    this.canClick = true;
   }
   _rollDice(result, container) {
-    if (this.needImg.classList.contains("blocked-dice")) {
-      this.place.firstElementChild.remove();
-      this.diceRender();
-      this.gameAlert.textContent = "";
-    } else {
-      this.getResult();
-      super._rollDice(result, container);
-      this.needImg.classList.add("blocked-dice");
+    if (this.canClick) {
+      this.canClick = false;
+      if (this.needImg.classList.contains("blocked-dice")) {
+        this.place.firstElementChild.remove();
+        this.diceRender();
+        this.gameAlert.textContent = "";
+      } else {
+        this.getResult();
+        super._rollDice(result, container);
+        this.needImg.classList.add("blocked-dice");
+      }
+      setTimeout(() => {
+        this.canClick = true;
+      }, 1000);
     }
   }
   getResult() {
