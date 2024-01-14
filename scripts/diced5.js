@@ -8,7 +8,8 @@ export class DiceD5 extends Dice {
     diceValue,
     name,
     mechanicsTemplate,
-    healContainer
+    healContainer,
+    form
   ) {
     super(diceSrc, place, template, diceValue, name);
     this.mechanicsTemplate = mechanicsTemplate;
@@ -18,6 +19,7 @@ export class DiceD5 extends Dice {
     this.atack = 25;
     this.isDef = false;
     this.healContainer = healContainer;
+    this.form = form;
     this.oneAction = true;
   }
   renderDice() {
@@ -50,7 +52,7 @@ export class DiceD5 extends Dice {
     defense.addEventListener("click", () => {
       if (this.oneAction) {
         this.isDef = true;
-        this.result = parseInt(this.result) / 2;
+        this.result = Math.round(parseInt(this.result) / 2);
         this.resultNode.textContent = this.result;
         console.log("Защита");
         this.oneAction = false;
@@ -60,6 +62,7 @@ export class DiceD5 extends Dice {
       console.log(this.place.firstElementChild);
       console.log("Лечение");
       if (this.oneAction) {
+        this.form.classList.remove("heal-invis");
         this._healRender();
         this.oneAction = false;
       }

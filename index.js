@@ -6,6 +6,8 @@ import { TestAnimal } from "./scripts/testAnimal.js";
 
 const mechanicsTemplate = document.querySelector("#mechanics");
 
+const form = document.querySelector(".form");
+
 const healContainer = document.querySelector("#heal-con");
 const healText = document.querySelector(".heal-text");
 
@@ -150,8 +152,13 @@ function heal() {
     hp = parseInt(healInput.value) + (parseInt(healInput.value) / 100) * 40;
   });
   healBtn.addEventListener("click", () => {
-    healInput.value = "";
-    healText.textContent = `Ваше здоровье восполнено до ${hp}`;
+    if (healInput.value != "") {
+      healInput.value = "";
+      healText.textContent = `Ваше здоровье восполнено до ${Math.round(hp)}`;
+      form.classList.add("heal-invis");
+    } else {
+      healText.textContent = "Введите ваше текущее здоровье";
+    }
   });
 }
 
@@ -193,6 +200,7 @@ const diceD5 = new DiceD5(
   diceD5Arr,
   "D5",
   mechanicsTemplate,
-  healContainer
+  healContainer,
+  form
 );
 diceD6.renderDice();
