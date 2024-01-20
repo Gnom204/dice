@@ -165,8 +165,8 @@ img {
 
 .choise-container {
   position: absolute;
-  left: -30px;
-  top: -20px;
+  left: -50px;
+  top: -160px;
   gap: 90px;
   display: grid;
   width: 100%;
@@ -207,6 +207,10 @@ img {
 }
 .mechanics-img {
   width: 100px;
+}
+
+.mechanic {
+  text-align: center;
 }
 
 .plus-container {
@@ -256,6 +260,10 @@ img {
 #D30 > .dice-result {
   font-size: 56px !important;
 }
+#D5 > .dice-result {
+  margin: 40px 8px 0 0 !important;
+  font-size: 56px !important;
+}
 
 @media screen and (max-width: 990px) {
   .choose-dice {
@@ -263,8 +271,8 @@ img {
     height: 50%;
   }
   .choise-container {
-    top: -60px;
-    gap: 50px;
+    gap: 30px;
+    row-gap: 8px;
     left: 0;
     max-width: 400px;
   }
@@ -286,5 +294,8 @@ img {
   }
   .choice-name {
     font-size: 22px;
+  }
+  #D5 > .dice-result {
+    margin: 30px 8px 0 0 !important;
   }
 }

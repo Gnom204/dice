@@ -16,7 +16,7 @@ export class DiceD5 extends Dice {
     this.mechanicsNode;
     this.resultNode;
     this.result;
-    this.atack = 25;
+    this.atack = 26;
     this.isDef = false;
     this.healContainer = healContainer;
     this.form = form;
