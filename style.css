@@ -129,6 +129,7 @@ img {
 }
 
 .choose-dice {
+  z-index: 100;
   display: flex;
   width: 20%;
   height: 20%;
