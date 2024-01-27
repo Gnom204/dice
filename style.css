@@ -168,7 +168,7 @@ img {
   position: absolute;
   left: -50px;
   top: -160px;
-  gap: 90px;
+  gap: 110px;
   display: grid;
   width: 100%;
   grid-template-columns: repeat(3, 1fr);
@@ -262,7 +262,7 @@ img {
   font-size: 56px !important;
 }
 #D5 > .dice-result {
-  margin: 40px 8px 0 0 !important;
+  /* margin: 40px 8px 0 0 !important; */
   font-size: 56px !important;
 }
 
@@ -272,8 +272,8 @@ img {
     height: 50%;
   }
   .choise-container {
-    gap: 30px;
-    row-gap: 8px;
+    gap: 50px;
+    row-gap: 35px;
     left: 0;
     max-width: 400px;
   }
@@ -293,10 +293,13 @@ img {
   .dice-result {
     font-size: 70px;
   }
+  .choise-container {
+    gap: 30px;
+  }
   .choice-name {
     font-size: 22px;
   }
   #D5 > .dice-result {
-    margin: 30px 8px 0 0 !important;
+    /* margin: 30px 8px 0 0 !important; */
   }
 }
