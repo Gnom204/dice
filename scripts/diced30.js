@@ -78,7 +78,7 @@ export class DiceD30 extends Dice {
         res = "занесённый странник";
         break;
       case "15":
-        res = "внезапное нападение";
+        res = "в минус один";
         break;
       case "17":
         res = "один к одному";
