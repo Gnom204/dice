@@ -199,6 +199,7 @@ const diceD5 = new DiceD5(
   "D5",
   mechanicsTemplate,
   healContainer,
-  form
+  form,
+  healText
 );
 diceD6.renderDice();

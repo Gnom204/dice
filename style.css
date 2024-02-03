@@ -294,8 +294,14 @@ img {
     font-size: 70px;
   }
   .choise-container {
-    gap: 30px;
+    gap: 40px;
+    row-gap: 10px;
+    top: -180px;
   }
+  .heal {
+    width: 85%;
+  }
+
   .choice-name {
     font-size: 22px;
   }

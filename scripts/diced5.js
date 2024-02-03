@@ -9,7 +9,8 @@ export class DiceD5 extends Dice {
     name,
     mechanicsTemplate,
     healContainer,
-    form
+    form,
+    healText
   ) {
     super(diceSrc, place, template, diceValue, name);
     this.mechanicsTemplate = mechanicsTemplate;
@@ -21,6 +22,7 @@ export class DiceD5 extends Dice {
     this.healContainer = healContainer;
     this.form = form;
     this.oneAction = true;
+    this.healText = healText;
   }
   renderDice() {
     super.renderDice();
@@ -31,6 +33,7 @@ export class DiceD5 extends Dice {
     super._rollDice(result, container);
     this.healContainer.classList.add("heal-invis");
     this.oneAction = true;
+    this.healText.textContent = "Введите ваше текущее здоровье";
   }
   _createMechanics() {
     const clone =
