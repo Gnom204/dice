@@ -9,8 +9,8 @@ export class DiceD5 extends Dice {
     name,
     mechanicsTemplate,
     healContainer,
-    form,
-    healText
+    form
+    // healText
   ) {
     super(diceSrc, place, template, diceValue, name);
     this.mechanicsTemplate = mechanicsTemplate;
@@ -22,7 +22,7 @@ export class DiceD5 extends Dice {
     this.healContainer = healContainer;
     this.form = form;
     this.oneAction = true;
-    this.healText = healText;
+    // this.healText = healText;
   }
   renderDice() {
     super.renderDice();
@@ -33,15 +33,14 @@ export class DiceD5 extends Dice {
     super._rollDice(result, container);
     this.healContainer.classList.add("heal-invis");
     this.oneAction = true;
-    this.healText.textContent = "Введите ваше текущее здоровье";
+    // healText.textContent = "Введите ваше текущее здоровье"
   }
   _createMechanics() {
     const clone =
       this.mechanicsTemplate.content.firstElementChild.cloneNode(true);
     const atack = clone.querySelector(".attack");
     const defense = clone.querySelector(".defense");
-    const heal = clone.querySelector(".heal");
-    console.log(clone, atack, defense, heal);
+    // const heal = clone.querySelector(".heal");
     super.getResult();
     atack.addEventListener("click", () => {
       if (this.oneAction) {
@@ -61,16 +60,16 @@ export class DiceD5 extends Dice {
         this.oneAction = false;
       }
     });
-    heal.addEventListener("click", () => {
-      console.log(this.place.firstElementChild);
-      console.log("Лечение");
-      if (this.oneAction) {
-        this.form.classList.remove("heal-invis");
-        this._healRender();
-        this.oneAction = false;
-      }
-      // this._plusRender();
-    });
+    // heal.addEventListener("click", () => {
+    //   console.log(this.place.firstElementChild);
+    //   console.log("Лечение");
+    //   if (this.oneAction) {
+    //     this.form.classList.remove("heal-invis");
+    //     this._healRender();
+    //     this.oneAction = false;
+    //   }
+    //   // this._plusRender();
+    // });
     this.mechanicsNode = clone;
   }
 

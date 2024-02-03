@@ -142,25 +142,25 @@ function postDice(e) {
   }
 }
 
-function heal() {
-  const healInput = healContainer.querySelector("#heal-input");
-  const healBtn = healContainer.querySelector(".heal-btn");
-  let hp;
-  healInput.addEventListener("input", () => {
-    hp = parseInt(healInput.value) + (parseInt(healInput.value) / 100) * 40;
-  });
-  healBtn.addEventListener("click", () => {
-    if (healInput.value != "") {
-      healInput.value = "";
-      healText.textContent = `Ваше здоровье восполнено до ${Math.round(hp)}`;
-      form.classList.add("heal-invis");
-    } else {
-      healText.textContent = "Введите ваше текущее здоровье";
-    }
-  });
-}
+// function heal() {
+//   const healInput = healContainer.querySelector("#heal-input");
+//   const healBtn = healContainer.querySelector(".heal-btn");
+//   let hp;
+//   healInput.addEventListener("input", () => {
+//     hp = parseInt(healInput.value) + (parseInt(healInput.value) / 100) * 40;
+//   });
+//   healBtn.addEventListener("click", () => {
+//     if (healInput.value != "") {
+//       healInput.value = "";
+//       healText.textContent = `Ваше здоровье восполнено до ${Math.round(hp)}`;
+//       form.classList.add("heal-invis");
+//     } else {
+//       healText.textContent = "Введите ваше текущее здоровье";
+//     }
+//   });
+// }
 
-heal();
+// heal();
 
 choiseDice();
 
