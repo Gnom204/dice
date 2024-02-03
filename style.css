@@ -166,9 +166,9 @@ img {
 
 .choise-container {
   position: absolute;
-  /* left: -50px; */
+  left: -60px;
   top: -80px;
-  gap: 110px;
+  gap: 160px;
   display: grid;
   width: 100%;
   grid-template-columns: repeat(3, 1fr);
@@ -293,7 +293,6 @@ img {
   .dice-result {
     font-size: 70px;
   }
-
   .heal {
     width: 85%;
   }
