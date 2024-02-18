@@ -163,8 +163,9 @@ img {
   color: red;
   width: 110px;
   height: 110px;
-  background: url(./source/angry.svg) no-repeat center center;
+  background: url(./source/angrys.png) no-repeat center center;
   background-size: contain;
+  background-position: 3px;
 }
 
 .dice-green {
