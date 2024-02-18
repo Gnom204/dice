@@ -163,14 +163,14 @@ img {
   color: red;
   width: 80px;
   height: 80px;
-  background: url(../source/angryEvents.svg) no-repeat center center;
+  background: url(../source/angryEvents.png) no-repeat center center;
   background-size: contain;
 }
 
 .dice-green {
   width: 80px;
   height: 80px;
-  background: url(../source/dobriEvents.svg) no-repeat center center;
+  background: url(../source/dobriEvents.png) no-repeat center center;
   background-size: contain;
 }
 
