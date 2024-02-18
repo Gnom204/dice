@@ -40,6 +40,7 @@ class Dice {
       container.classList.add("dice-active");
       result.textContent = "";
       result.classList.remove("dice-red");
+      result.classList.remove("dice-green");
       let randomNum = this._getRandomNum(1, this.diceValue.length + 1);
       let resValue = this.diceValue[randomNum - 1];
       this.result = resValue;

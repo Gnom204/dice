@@ -19,15 +19,29 @@ export class DiceD6 extends Dice {
     this.renderD30 = renderD30;
     this.pasivedice1 = pasivedice1;
     this.pasivedice2 = pasivedice2;
+    this.img = document.createElement("img");
   }
   _rollDice(result, container) {
+    console.log(this.result);
     super._rollDice(result, container);
-
     this.getResult();
+    result.classList.remove("dice-green");
+    console.log(this.result);
     if (this.result === "—") {
-      result.classList.add("dice-red");
-    }
-    if (this.result === "2") {
+      console.log("тире выпало");
+
+      console.log(result);
+      setTimeout(() => {
+        result.textContent = "";
+        result.classList.add("dice-red");
+      }, 500);
+    } else if (this.result === "5") {
+      console.log("пять выпало");
+      setTimeout(() => {
+        result.textContent = "";
+        result.classList.add("dice-green");
+      }, 500);
+    } else if (this.result === "2") {
       setTimeout(() => {
         this.place.firstElementChild.remove();
         this.renderD30();

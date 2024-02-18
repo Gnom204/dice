@@ -53,7 +53,6 @@ const fillArr = (num) => {
     arr.push(x.toString());
     x++;
   }
-  console.log(arr);
   return arr;
 };
 

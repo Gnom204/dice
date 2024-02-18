@@ -66,7 +66,7 @@ export class DiceD30 extends Dice {
         res = "назад дороги нет (5)";
         break;
       case "7":
-        res = "одноногий странник (5)";
+        res = "одноногий странник (2)";
         break;
       case "9":
         res = "марионетка";
@@ -87,7 +87,7 @@ export class DiceD30 extends Dice {
         res = "один к одному (3)";
         break;
       case "21":
-        res = "безвоздушная атака";
+        res = "бесконтактная атака";
         break;
       case "23":
         res = "принуждённое отступление";
@@ -96,7 +96,7 @@ export class DiceD30 extends Dice {
         res = "принуждённое отступление (2)";
         break;
       case "27":
-        res = "принуждённое отступление (4)";
+        res = "больная рулетка (4)";
         break;
       case "29":
         res = "жизнь или смерть";

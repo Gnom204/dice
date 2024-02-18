@@ -16,11 +16,11 @@
 
 p {
   font-size: 2rem;
-  color: #4ecca3;
+  color: black;
 }
 
 h1 {
-  color: #4ecca3;
+  color: black;
 }
 
 img {
@@ -161,7 +161,17 @@ img {
 
 .dice-red {
   color: red;
-  font-size: 140px !important;
+  width: 80px;
+  height: 80px;
+  background: url(../source/angryEvents.svg) no-repeat center center;
+  background-size: contain;
+}
+
+.dice-green {
+  width: 80px;
+  height: 80px;
+  background: url(../source/dobriEvents.svg) no-repeat center center;
+  background-size: contain;
 }
 
 .choise-container {
