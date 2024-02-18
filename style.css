@@ -161,15 +161,15 @@ img {
 
 .dice-red {
   color: red;
-  width: 80px;
-  height: 80px;
+  width: 110px;
+  height: 110px;
   background: url(./source/angry.svg) no-repeat center center;
   background-size: contain;
 }
 
 .dice-green {
-  width: 80px;
-  height: 80px;
+  width: 110px;
+  height: 110px;
   background: url(./source/dobri.svg) no-repeat center center;
   background-size: contain;
 }
