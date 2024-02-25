@@ -3,9 +3,9 @@
   src: url(./source/ofont.ru_Zing\ Rust.ttf);
 }
 body {
-  background-image: url(./source/background.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url(./source/backgroundmob.PNG);
+  /* background-repeat: no-repeat;
+  background-size: cover; */
 }
 .container {
   width: 70%;
