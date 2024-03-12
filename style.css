@@ -56,24 +56,6 @@ img {
   background: #232931;
 }
 
-.burger::before {
-  transition: box-shadow 0.3s 0.15s, top 0.3s 0.15s, transform 0.3s;
-}
-.burger::after {
-  transition: bottom 0.3s 0.15s, transform 0.3s;
-}
-.burger.active::before {
-  top: 11px;
-  transform: rotate(45deg);
-  box-shadow: 0 6px 0 rgba(219, 216, 34, 0);
-  transition: box-shadow 0.15s, top 0.3s, transform 0.3s 0.15s;
-}
-.burger.active::after {
-  bottom: 11px;
-  transform: rotate(-45deg);
-  transition: bottom 0.3s, transform 0.3s 0.15s;
-}
-
 .root {
   display: flex;
   flex-direction: column;
@@ -176,7 +158,7 @@ img {
 .dice-green {
   width: 95px;
   height: 95px;
-  background: url(./source/dobri.svg) no-repeat center center;
+  background: url(./source/PurpleDice.svg) no-repeat center center;
   background-size: contain;
 }
 

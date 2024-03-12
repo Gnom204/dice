@@ -36,12 +36,10 @@ export class DiceD6 extends Dice {
         result.classList.add("dice-red");
       }, 500);
     } else if (this.result === "5") {
-      console.log("пять выпало");
       setTimeout(() => {
         result.textContent = "";
         result.classList.add("dice-green");
       }, 500);
-    } else if (this.result === "2") {
       setTimeout(() => {
         this.place.firstElementChild.remove();
         this.renderD30();
@@ -51,6 +49,23 @@ export class DiceD6 extends Dice {
       }, 800);
     }
     this.gameAlert.textContent = "";
+  }
+  _getRandomNum() {
+    let random = Math.random().toFixed(3);
+    console.log(random);
+    if (random < 0.1) {
+      return "5";
+    } else if (random < 0.2) {
+      return "6";
+    } else if (random < 0.4) {
+      return "1";
+    } else if (random < 0.6) {
+      return "2";
+    } else if (random < 0.8) {
+      return "3";
+    } else if (random < 1) {
+      return "4";
+    }
   }
   getResult() {
     super.getResult();
