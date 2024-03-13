@@ -55,13 +55,13 @@ export class DiceD6 extends Dice {
     console.log(random);
     if (random <= 0.08) {
       return "5";
-    } else if (random <= 0.18) {
+    } else if (random <= 0.2) {
       return "6";
-    } else if (random <= 0.38) {
+    } else if (random <= 0.4) {
       return "1";
-    } else if (random < 0.6) {
+    } else if (random <= 0.6) {
       return "2";
-    } else if (random < 0.81) {
+    } else if (random <= 0.8) {
       return "3";
     } else if (random <= 1) {
       return "4";
