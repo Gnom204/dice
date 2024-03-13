@@ -51,19 +51,19 @@ export class DiceD6 extends Dice {
     this.gameAlert.textContent = "";
   }
   _getRandomNum() {
-    let random = Math.random().toFixed(3);
+    let random = Math.random().toFixed(2);
     console.log(random);
-    if (random < 0.1) {
+    if (random <= 0.08) {
       return "5";
-    } else if (random < 0.2) {
+    } else if (random <= 0.18) {
       return "6";
-    } else if (random < 0.4) {
+    } else if (random <= 0.38) {
       return "1";
     } else if (random < 0.6) {
       return "2";
-    } else if (random < 0.8) {
+    } else if (random < 0.81) {
       return "3";
-    } else if (random < 1) {
+    } else if (random <= 1) {
       return "4";
     }
   }
