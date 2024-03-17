@@ -47,104 +47,209 @@ export class DiceD30 extends Dice {
     super.getResult();
     let res;
     console.log(res);
-
+    let description = document.createElement("p");
+    description.classList.add("description-ability");
+    res = this._getDescription();
     setTimeout(() => {
-      console.log(res);
-      this.gameAlert.textContent = this._getDescription();
+      this.gameAlert.textContent = res.name;
+      this.gameAlert.insertAdjacentElement("beforeend", description);
+      description.textContent = res.description;
     }, 500);
   }
   _getDescription() {
     let res;
     switch (this.result) {
       case "1":
-        res = "оглушение";
+        res = {
+          name: "Оглушение",
+          description: "пропуск броска",
+        };
         break;
       case "3":
-        res = "оглушение (2)";
+        res = {
+          name: "Оглушение (2)",
+          description: "пропуск броска два раза подряд",
+        };
         break;
       case "5":
-        res = "назад дороги нет (5)";
+        res = {
+          name: "Назад дороги нет",
+          description:
+            "невозможность ходить назад на протяжении пяти своих бросков",
+        };
         break;
       case "7":
-        res = "одноногий странник (2)";
+        res = {
+          name: "Одноногий странник (2)",
+          description:
+            "каждый ход равен половине клетки на протяжении двух бросков",
+        };
         break;
       case "9":
-        res = "марионетка";
+        res = {
+          name: "Марионетка",
+          description: "Захват управления чужим броском и ходом",
+        };
         break;
       case "11":
-        res = "точка возврата";
+        res = {
+          name: "Точка возврата",
+          description: "Возвращение назад на 15 клеток",
+        };
         break;
       case "13":
-        res = "занесённый странник";
+        res = {
+          name: "Занесенный странник",
+          description:
+            "отправление игрока на любую клетку в радиусе 10х10 клеток от него",
+        };
         break;
       case "15":
-        res = "в минус один";
+        res = {
+          name: "В минус один",
+          description: "ход на одно значение меньше от выпавшего",
+        };
         break;
       case "17":
-        res = "один к одному";
+        res = {
+          name: "Один к одному",
+          description:
+            "Ход на одну клетку в независимости от того, какое значение выпало",
+        };
         break;
       case "19":
-        res = "один к одному (3)";
+        res = {
+          name: "Один к одному (3)",
+          description:
+            "Ход три броска подряд на одну клетку в независимости от того, какое значение выпало",
+        };
         break;
       case "21":
-        res = "бесконтактная атака";
+        res = {
+          name: "безвоздушная атака",
+          description: "каждый ход наносит -10 ед. здоровья",
+        };
         break;
       case "23":
-        res = "принуждённое отступление";
+        res = {
+          name: "Принужденное отступление",
+          description:
+            "игрок ходит назад в зависимости от выпавшего значения того, кто наложил на игрока это отрицание",
+        };
         break;
       case "25":
-        res = "принуждённое отступление (2)";
+        res = {
+          name: "Принужденное отступение (2)",
+          description:
+            "ход назад два броска подряд в зависимости от выпавшего значения того, кто наложил на игрока это отрицание",
+        };
         break;
       case "27":
-        res = "больная рулетка (4)";
+        res = {
+          name: "Больная рулетка",
+          description: "-50 ед. здоровья за каждый ход",
+        };
         break;
       case "29":
-        res = "жизнь или смерть";
+        res = {
+          name: "Жизнь или смерть",
+          description:
+            "от -100 до -400 ед. урона в зависимости от выпавшего значения (значение 1=100 ед. урона и т.д.)",
+        };
         break;
       case "2":
-        res = "режим скорости";
+        res = {
+          name: "Режим скорости",
+          description: "двойной бросок",
+        };
         break;
       case "4":
-        res = "диаго-шаг";
+        res = {
+          name: "Диаго-шаг",
+          description: "ход по диагонали",
+        };
         break;
       case "6":
-        res = "гиг-шаг";
+        res = {
+          name: "Гиг-шаг",
+          description: "ход через клетку",
+        };
         break;
       case "8":
-        res = "иммунитет свыше";
+        res = {
+          name: "Иммунитет свыше",
+          description: "неуязвимость",
+        };
         break;
       case "10":
-        res = "целевой переброс";
+        res = {
+          name: "Целевой переброс",
+          description:
+            "перемещение в любую клетку в радиусе 10х10 клеток от себя",
+        };
         break;
       case "12":
-        res = "курс лечения";
+        res = {
+          name: "Курс лечения",
+          description: "+10 ед. здоровья в течение каждого хода",
+        };
         break;
       case "14":
-        res = "в прошлое";
+        res = {
+          name: "В прошлое",
+          description:
+            "возвращение назад на столько клеток, сколько необходимо (но не более 10 клеток)",
+        };
         break;
       case "16":
-        res = "двойные действия";
+        res = {
+          name: "Двойные действия",
+          description:
+            "применение одновременно двух усилений за бросок (не считая это усиление)",
+        };
         break;
       case "18":
-        res = "вынужденный привал";
+        res = {
+          name: "Вынужденный привал",
+          description: "возможность пропустить свой бросок",
+        };
         break;
       case "20":
-        res = "вынужденный привал (2)";
+        res = {
+          name: "Вынужденный привал(2)",
+          description: "возможность пропустить два броска подряд",
+        };
         break;
       case "22":
-        res = "четыре икса";
+        res = {
+          name: "Четыре икса",
+          description: "выпавшие значения 1 и 2 умножаются на 4",
+        };
         break;
       case "24":
-        res = "безопасная дорога";
+        res = {
+          name: "Безопасная дорога",
+          description:
+            "ход в любом направлении через любые препятствия (кроме стен)",
+        };
         break;
       case "26":
-        res = "дай пять";
+        res = {
+          name: "Дай пять",
+          description: "ход на 5 клеток",
+        };
         break;
       case "28":
-        res = "дай пять (2)";
+        res = {
+          name: "Дай пять(2)",
+          description: "ход на пять клеток два броска подряд",
+        };
         break;
       case "30":
-        res = "реабилитация";
+        res = {
+          name: "Реабилитация",
+          description: "мгновенно +250 ед. здоровья",
+        };
         break;
     }
     console.log({ res });
